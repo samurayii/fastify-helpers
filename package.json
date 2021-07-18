@@ -1,0 +1,73 @@
+{
+    "name": "fastify-helpers",
+    "version": "0.1.1",
+    "description": "Helper decorators for fastify",
+    "main": "index.js",
+    "scripts": {
+        "up": "ncu && ncu -u && rimraf ./package-lock.json && npm i",
+        "ncu": "ncu",
+        "pub": "npm run build && npm publish ./dist",
+        "build": "rimraf ./dist && tsc && json-key-remover && files-copier -e build",
+        "test": "jest --config ./tests/e2e.config.json",
+        "start": "ts-node ./tests/start.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/samurayii/fastify-helpers.git"
+    },
+    "keywords": [
+        "fastify",
+        "typescript",
+        "module",
+        "decorators"
+    ],
+    "author": "Nuzhnov A.A.",
+    "license": "GNU GPLv3",
+    "bugs": {
+        "url": "https://github.com/samurayii/fastify-helpers/issues"
+    },
+    "homepage": "https://github.com/samurayii/fastify-helpers.git#readme",
+    "devDependencies": {
+        "@types/chai": "^4.2.21",
+        "@types/jest": "^26.0.24",
+        "@types/node": "^15.0.1",
+        "@types/node-fetch": "^2.5.11",
+        "@types/pino": "^6.3.9",
+        "@typescript-eslint/eslint-plugin": "^4.22.0",
+        "@typescript-eslint/parser": "^4.22.0",
+        "chai": "^4.3.4",
+        "eslint": "^7.25.0",
+        "files-copier": "^0.1.1",
+        "jest": "^27.0.6",
+        "json-key-remover": "^0.0.3",
+        "node-fetch": "^2.6.1",
+        "npm-check-updates": "^11.5.7",
+        "pino": "^6.12.0",
+        "pino-pretty": "^5.1.1",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^27.0.3",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.4"
+    },
+    "remover": {
+        "target": "./package.json",
+        "destination": "./dist/package.json",
+        "remove": [
+            "remover",
+            "devDependencies",
+            "scripts",
+            "copier"
+        ]
+    },
+    "copier": {
+        "build": {
+            "rewrite": true,
+            "copy": [
+                {
+                    "from": "README.md",
+                    "to": "./dist/README.md"
+                }
+            ]
+        }
+    }
+}
