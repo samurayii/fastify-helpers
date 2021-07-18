@@ -1,6 +1,6 @@
 {
     "name": "fastify-helpers",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Helper decorators for fastify",
     "main": "index.js",
     "scripts": {
@@ -30,24 +30,24 @@
     "devDependencies": {
         "@types/chai": "^4.2.21",
         "@types/jest": "^26.0.24",
-        "@types/node": "^15.0.1",
+        "@types/node": "^16.3.3",
         "@types/node-fetch": "^2.5.11",
         "@types/pino": "^6.3.9",
-        "@typescript-eslint/eslint-plugin": "^4.22.0",
-        "@typescript-eslint/parser": "^4.22.0",
+        "@typescript-eslint/eslint-plugin": "^4.28.3",
+        "@typescript-eslint/parser": "^4.28.3",
         "chai": "^4.3.4",
-        "eslint": "^7.25.0",
+        "eslint": "^7.31.0",
         "files-copier": "^0.1.1",
         "jest": "^27.0.6",
         "json-key-remover": "^0.0.3",
         "node-fetch": "^2.6.1",
-        "npm-check-updates": "^11.5.7",
+        "npm-check-updates": "^11.8.3",
         "pino": "^6.12.0",
         "pino-pretty": "^5.1.1",
         "rimraf": "^3.0.2",
         "ts-jest": "^27.0.3",
-        "ts-node": "^9.1.1",
-        "typescript": "^4.2.4"
+        "ts-node": "^10.1.0",
+        "typescript": "^4.3.5"
     },
     "remover": {
         "target": "./package.json",
