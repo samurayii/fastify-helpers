@@ -14,4 +14,17 @@ const server = fastify({
     logger: logger
 });
 
-server.listen(3000);
+const bootstrap = async () => {
+
+    await server.register( (instance, opts, done) => {   
+        instance.listen(3000);
+        done();
+    }, {
+        prefix: "/hello"
+    });
+    
+    console.log(server.printRoutes());
+
+};
+
+bootstrap();
