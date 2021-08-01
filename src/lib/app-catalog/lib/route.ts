@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { ILinkCatalogRoute, TLinkCatalogRouteOptions } from "../../../interfaces";
+import { ILinkCatalogRoute, ILinkCatalogRouteOptions } from "../../../interfaces";
 
 export class LinkCatalogRoute implements ILinkCatalogRoute{
 
     constructor (
-        private readonly _config: TLinkCatalogRouteOptions
+        private readonly _config: ILinkCatalogRouteOptions
     ) {}
 
     get id (): string {

@@ -1,5 +1,5 @@
 import { FastifyInstance } from "fastify";
-import { ILinkCatalog, ILinkCatalogServer, TLinkCatalogControllerOptions, TLinkCatalogRouteOptions } from "../../interfaces";
+import { ILinkCatalog, ILinkCatalogServer, ILinkCatalogControllerOptions, ILinkCatalogRouteOptions } from "../../interfaces";
 import { LinkCatalogServer } from "./lib/server";
 import { calc } from "./lib/calc";
 
@@ -25,7 +25,7 @@ class LinkCatalog implements ILinkCatalog {
 
     }
 
-    addController (options: TLinkCatalogControllerOptions): void {
+    addController (options: ILinkCatalogControllerOptions): void {
 
         this._createApp(options.id_server);
 
@@ -33,7 +33,7 @@ class LinkCatalog implements ILinkCatalog {
 
     }
 
-    addRoute (options: TLinkCatalogRouteOptions): void {
+    addRoute (options: ILinkCatalogRouteOptions): void {
         
         this._createApp(options.id_server);
 

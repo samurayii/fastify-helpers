@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 
-export type TLinkCatalogControllerOptions = {
+export interface ILinkCatalogControllerOptions {
     constructor: Function
     id_controller: string
     id_server: string
     prefix: string
 }
 
-export type TLinkCatalogRouteOptions = {
+export interface ILinkCatalogRouteOptions {
     id_controller: string
     name: string
     id_server: string
@@ -16,17 +16,17 @@ export type TLinkCatalogRouteOptions = {
     path: string
 }
 
-export type TLinkCatalogRouteList = {
+export interface ILinkCatalogRouteList {
     [key: string]: ILinkCatalogRoute
 }
 
-export type TLinkCatalogControllerList = {
+export interface ILinkCatalogControllerList {
     [key: string]: ILinkCatalogController
 }
 
 export interface ILinkCatalog {
-    addController: (options: TLinkCatalogControllerOptions) => void
-    addRoute: (options: TLinkCatalogRouteOptions) => void
+    addController: (options: ILinkCatalogControllerOptions) => void
+    addRoute: (options: ILinkCatalogRouteOptions) => void
     calc: (id_server: string, fastify_app: FastifyInstance) => void
 }
 
@@ -46,10 +46,10 @@ export interface ILinkCatalogRoute {
 
 export interface ILinkCatalogServer {
     readonly id: string
-    readonly controllers: TLinkCatalogControllerList
-    readonly routes: TLinkCatalogRouteList
-    addController: (options: TLinkCatalogControllerOptions) => void
-    addRoute: (options: TLinkCatalogRouteOptions) => void
+    readonly controllers: ILinkCatalogControllerList
+    readonly routes: ILinkCatalogRouteList
+    addController: (options: ILinkCatalogControllerOptions) => void
+    addRoute: (options: ILinkCatalogRouteOptions) => void
 }
 
 export interface IFastifyContext {

@@ -1,6 +1,6 @@
 {
     "name": "fastify-helpers",
-    "version": "0.1.5",
+    "version": "0.2.5",
     "description": "Helper decorators for fastify",
     "main": "index.js",
     "scripts": {
